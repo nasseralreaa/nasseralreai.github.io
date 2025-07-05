@@ -2,60 +2,161 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>أفلام عربية</title>
+  <title>🎬 أفلام عربية</title>
   <style>
-    body { background: #FFFFF0; font-family: 'Cairo', sans-serif; text-align: center; padding: 20px; }
-    h1 { color: #000080; }
-    .card { background: #f5f5dc; border-radius: 15px; padding: 15px; margin: 15px auto;
-             width: 90%; max-width: 500px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
-    .card h3 { margin-bottom: 5px; }
-    .btn { background: #000080; color: white; padding: 8px 14px; border-radius: 10px;
-            text-decoration: none; display: inline-block; margin-top: 10px; }
-    .btn:hover { background-color: #1a1aff; }
-    .back { margin-top: 30px; display: inline-block; }
+    body {
+      background: #F0FFFF;
+      font-family: 'Cairo', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #000000;
+      margin-bottom: 30px;
+    }
+
+    .navbar {
+      background-color: #B0E0E6;
+      overflow: auto;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: inline-block;
+      font-size: 14px;
+    }
+
+    .navbar a:hover {
+      background-color: #1a1aff;
+      border-radius: 8px;
+    }
+
+    .movie-box {
+      margin: 40px auto;
+      max-width: 800px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border-radius: 12px;
+      border: none;
+    }
+
+    .movie-title {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    .btns {
+      margin-top: 15px;
+    }
+
+    .btn {
+      background-color: #4682B4;
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 10px;
+      margin: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #5a9bd5;
+    }
+
+    .btn-download {
+      background-color: #32CD32;
+    }
+
+    .btn-download:hover {
+      background-color: #45d845;
+    }
   </style>
 </head>
 <body>
 
-<div class="navbar">
-  <a href="index.html">🏠 الرئيسية</a>
-  <a href="arabic-series.html">📺 مسلسلات عربية</a>
-  <a href="arabic-movies.html">🎬 أفلام عربية</a>
-  <a href="kids.html">👶 الأطفال</a>
-  <a href="religion.html">🕌 الدينية</a>
-  <a href="anime.html">🎌 الأنمي</a>
-</div>
-<style>
-  .navbar {
-    background-color: #000080;
-    overflow: auto;
-    text-align: center;
-    padding: 10px 0;
-  }
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: inline-block;
-    font-size: 14px;
-  }
-  .navbar a:hover {
-    background-color: #1a1aff;
-    border-radius: 8px;
-  }
-</style>
+  <div class="navbar">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="arabic-series.html">📺 مسلسلات عربية</a>
+    <a href="arabic-movies.html">🎬 أفلام عربية</a>
+    <a href="kids.html">👶 الأطفال</a>
+    <a href="religion.html">🕌 الدينية</a>
+    <a href="anime.html">🎌 الأنمي</a>
+    <a href="episode_external_with_download.html">🛰 بث مباشر للقنوات الفضائية</a>
+  </div>
 
-  <h1>أفلام عربية</h1>
-  <div class="card">
-    <h3>عنوان 1</h3>
-    <p>وصف مختصر</p>
-    <a href="videos/sample1.mp4" class="btn">مشاهدة</a>
+  <h1>🎬 قائمة أفلام عربية</h1>
+
+  <!-- بداية الفيلم 1 -->
+  <div class="movie-box">
+    <iframe src="https://www.youtube.com/embed/8U1UfpZ5UIc?si=1OiaFdLBYATJCGYI" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 1: فيلم عنتر ابن ابن ابن ابن شداد بطولة محمد هنيدي</div>
+    <div class="btns">
+      <a href="https://www.youtube.com/watch?v=8U1UfpZ5UIc" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://example.com/download1.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
   </div>
-  <div class="card">
-    <h3>عنوان 2</h3>
-    <p>وصف مختصر</p>
-    <a href="videos/sample2.mp4" class="btn">مشاهدة</a>
+
+  <!-- بداية الفيلم 2 -->
+  <div class="movie-box">
+    <iframe src="https://www.youtube.com/embed/FiTy3_qKmw0?si=yxcA20FCjeSG1D9b" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 2: فيلم عشان خارجين بطولة حسن الرداد وايمي سميرغانم</div>
+    <div class="btns">
+      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div  class="movie-box">
+    <iframe src="https://www.youtube.com/embed/u7VgxLKOTb8?si=Jh-Jqc4nge9lpHa6" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 3: فيلم الديلر بطولة احمد السقا و خالد النبوي</div>
+    <div class="btns">
+      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
   </div>
-  <a href="index.html" class="btn back">⬅️ العودة للصفحة الرئيسية</a>
+</div  class="movie-box">
+    <iframe src="https://www.youtube.com/embed/a-B8sSFvYS4?si=ligwvVOXICKmwmys" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 4: فيلم تحت الترابيزة بطولة محمد سعد</div>
+    <div class="btns">
+      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  </div>
+</div  class="movie-box">
+    <iframe src="https://www.youtube.com/embed/bjkAF89aHaY?si=VXFf3wjDTsjrqP1K" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 5: فيلم عش البلبل بطولة كريم محمود و سعد الصغير  </div>
+    <div class="btns">
+      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  </div>
+</div  class="movie-box">
+    <iframe src="https://www.youtube.com/embed/cAsqgAID5SY?si=ZTU6Dx4GnAexP-IY" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 6: فيلم عمر وسلمى 3 بطولة تامر حسني و مي عز الدين  </div>
+    <div class="btns">
+      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  </div>
+</div  class="movie-box">
+    <iframe src="https://www.youtube.com/embed/j_2kpu0VHbk?si=UROqQvgP6u_GhBHo" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 7: فيلم زكي شان بطولة احمد حلمي و ياسمين عبدالعزيز  </div>
+    <div class="btns">
+      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  </div>
+
+  
 </body>
 </html>
