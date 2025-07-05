@@ -1,69 +1,333 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>مسلسلات عربية</title>
   <style>
-    body { background: #FFFFF0; font-family: 'Cairo', sans-serif; text-align: center; padding: 20px; }
-    h1 { color: #000080; }
-    .card { background: #f5f5dc; border-radius: 15px; padding: 15px; margin: 15px auto;
-             width: 90%; max-width: 500px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
-    .card h3 { margin-bottom: 5px; }
-    .btn { background: #000080; color: white; padding: 8px 14px; border-radius: 10px;
-            text-decoration: none; display: inline-block; margin-top: 10px; }
-    .btn:hover { background-color: #1a1aff; }
-    .back { margin-top: 30px; display: inline-block; }
-    .thumb {
-  width: 50%;
-  max-width: 250px;
-  height: auto;
-  display: block;
-  margin: 10px auto;
-}
+    body {
+      background: #F0FFFF;
+      font-family: 'Cairo', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #000000;
+      margin-bottom: 30px;
+    }
+    .navbar {
+      background-color: #B0E0E6;
+      overflow: auto;
+      text-align: center;
+      padding: 10px 0;
+    }
+    .navbar a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: inline-block;
+      font-size: 14px;
+    }
+    .navbar a:hover {
+      background-color: #1a1aff;
+      border-radius: 8px;
+    }
+
+    .series-list {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .series-block {
+      margin-bottom: 30px;
+    }
+
+    .series-thumbnail {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .series-title {
+      background-color: #DDEEFF;
+      padding: 15px 20px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 20px;
+      color: #003366;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      user-select: none;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+
+    .series-title:hover {
+      background-color: #B0D0FF;
+    }
+
+    .episode-list {
+      list-style: none;
+      padding: 0 20px 20px 20px;
+      margin: 0 0 20px 0;
+      display: none;
+      background-color: #F0F8FF;
+      border-radius: 0 0 15px 15px;
+      box-shadow: inset 0 0 10px #CFE2FF;
+    }
+
+    .episode-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #C0D8FF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .episode-list li:last-child {
+      border-bottom: none;
+    }
+
+    .episode-name {
+      font-weight: bold;
+      color: #003366;
+    }
+
+    .btn {
+      background-color: #4682B4;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      margin-left: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #5a9bd5;
+    }
+
+    .btn-download {
+      background-color: #32CD32;
+    }
+
+    .btn-download:hover {
+      background-color: #45d845;
+    }
   </style>
 </head>
 <body>
 
-<div class="navbar">
-  <a href="index.html">🏠 الرئيسية</a>
-  <a href="arabic-series.html">📺 مسلسلات عربية</a>
-  <a href="arabic-movies.html">🎬 أفلام عربية</a>
-  <a href="kids.html">👶 الأطفال</a>
-  <a href="religion.html">🕌 الدينية</a>
-  <a href="anime.html">🎌 الأنمي</a>
-</div>
-<style>
-  .navbar {
-    background-color: #000080;
-    overflow: auto;
-    text-align: center;
-    padding: 10px 0;
-  }
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: inline-block;
-    font-size: 14px;
-  }
-  .navbar a:hover {
-    background-color: #1a1aff;
-    border-radius: 8px;
-  }
-</style>
+  <div class="navbar">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="arabic-series.html">📺 مسلسلات عربية</a>
+    <a href="arabic-movies.html">🎬 أفلام عربية</a>
+    <a href="kids.html">👶 الأطفال</a>
+    <a href="religion.html">🕌 الدينية</a>
+    <a href="anime.html">🎌 الأنمي</a>
+    <a href="episode_external_with_download.html">🛰 بث مباشر للقنوات الفضائية</a>
+  </div>
 
-  <h1>مسلسلات عربية</h1>
-  <div class="card">
-    <h3>عنوان 1</h3>
-    <p>وصف مختصر</p>
-    <a href="videos/sample1.mp4" class="btn">مشاهدة</a>
+  <h1>📺 مسلسلات عربية</h1>
+
+  <div class="series-list">
+
+    <!-- مسلسل الهيبة -->
+    <div class="series-block">
+      <img src="thumbnails/hibah.jpg" alt="صورة مسلسل الهيبة" class="series-thumbnail">
+      <div class="series-title" onclick="toggleEpisodes('hibah')">مسلسل الهيبة ▼</div>
+      <ul id="hibah" class="episode-list">
+        <li>
+          <span class="episode-name">الحلقة 1</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9bc0he" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 2</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9bc0hc" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 3</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9bc0hg" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 4</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9bc0hi" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 5</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9bc0hm" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 6</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9bc0hk" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 7</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9bc0hs" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 8</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9c0cqo" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 9</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9c0cqq" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 10</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9c0cqs" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 11</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9c0cqu" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 12</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9c0cqw" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 13</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9c0cr6" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 14</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9c0cr4" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 15</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9c0cr0" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 16</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x9c0cqy" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+      </ul>
+      </ul>     
+           
+    </div>
+
+    <!-- مسلسل غرابيب سود -->
+    <div class="series-block">
+      <img src="images/ghrabeeb.jpg" alt="صورة غرابيب سود" class="series-thumbnail">
+      <div class="series-title" onclick="toggleEpisodes('ghrabeeb')">مسلسل غرابيب سود ▼</div>
+      <ul id="ghrabeeb" class="episode-list">
+        <li>
+          <span class="episode-name">الحلقة 1</span>
+          <div>
+            <a href="https://ok.ru/videoembed/2234567890" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- مسلسل الاختيار -->
+    <div class="series-block">
+      <img src="thumbnails/ekhteyar.jpg" alt="صورة مسلسل الاختيار" class="series-thumbnail">
+      <div class="series-title" onclick="toggleEpisodes('ekhteyar')">مسلسل الاختيار ▼</div>
+      <ul id="ekhteyar" class="episode-list">
+        <li>
+          <span class="episode-name">الحلقة 1</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/playlist/x6pgk6" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 2</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x7tj92r" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 3</span>
+          <div>
+            <a href="https://www.dailymotion.com/embed/video/x7tk6ke" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 4</span>
+          <div>
+            <a href="https://youtube.com/embed/RChXt0g6yDI?si=jbvGMZy3c5Mp90sG" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 5</span>
+          <div>
+            <a href="https://youtube.com/embed/hbe-Mco_MIA?si=pXLnOvDYnkhDt6o6" target="_blank" class="btn">مشاهدة</a>
+            <a href="#" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+
   </div>
-  <div class="card">
-    <h3>الحلقة 2</h3>
-    <img src="thumbnails/sample2.jpg" width="200px" height="auto">
-    <p>فيديو كوميدي</p>
-    <a href="videos/sample2.mp4" class="btn">مشاهدة</a>
-  </div>
-  <a href="index.html" class="btn back">⬅️ العودة للصفحة الرئيسية</a>
+
+  <script>
+    function toggleEpisodes(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
 </body>
 </html>
