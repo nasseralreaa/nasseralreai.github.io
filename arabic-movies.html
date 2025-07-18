@@ -2,97 +2,228 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>🎬 أفلام عربية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أفلام  عربية</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    }    
     body {
-      background: #F0FFFF;
-      font-family: 'Cairo', sans-serif;
-      text-align: center;
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #2c3e50);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 20px;
     }
-
-    h1 {
-      color: #000000;
+    
+    .header {
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .player-container {
+      width: 100%;
+      max-width: 1000px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      position: relative;
       margin-bottom: 30px;
     }
-
+    
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%; /* نسبة 16:9 */
+    }
+    
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .player-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .control-btn {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .control-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .control-btn i {
+      font-size: 1.2rem;
+    }
+    
+    .featured-videos {
+      width: 100%;
+      max-width: 1000px;
+      padding: 20px;
+    }
+    
+    .featured-videos h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 10px;
+    }
+    
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .video-card {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .thumbnail {
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(45deg, #3498db, #9b59b6);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .thumbnail::before {
+      content: "▶";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .video-info {
+      padding: 15px;
+    }
+    
+    .video-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    
+    .video-info p {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    
+    .footer {
+      width: 100%;
+      max-width: 1000px;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer p {
+      opacity: 0.7;
+    }
+    
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .player-controls {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .control-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
     .navbar {
-      background-color: #B0E0E6;
+      background-color: #1a2a6c;
       overflow: auto;
       text-align: center;
       padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .navbar a {
-      color: black;
+      color: white;
       text-decoration: none;
       padding: 10px 15px;
       display: inline-block;
       font-size: 14px;
+      transition: all 0.3s;
     }
 
     .navbar a:hover {
       background-color: #1a1aff;
       border-radius: 8px;
-    }
-
-    .movie-box {
-      margin: 40px auto;
-      max-width: 800px;
-      background-color: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      padding: 20px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 450px;
-      border-radius: 12px;
-      border: none;
-    }
-
-    .movie-title {
-      margin-top: 15px;
-      font-size: 20px;
-      color: #003366;
-      font-weight: bold;
-    }
-
-    .btns {
-      margin-top: 15px;
-    }
-
-    .btn {
-      background-color: #4682B4;
       color: white;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 10px;
-      margin: 5px;
-      font-size: 14px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #5a9bd5;
-    }
-
-    .btn-download {
-      background-color: #32CD32;
-    }
-
-    .btn-download:hover {
-      background-color: #45d845;
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <div class="navbar">
+    <div class="navbar">
     <a href="index.html">🏠 الرئيسية</a>
     <a href="arabic-series.html">📺 مسلسلات عربية</a>
     <a href="arabic-movies.html">🎬 أفلام عربية</a>
@@ -102,61 +233,481 @@
     <a href="episode_external_with_download.html">🛰 بث مباشر للقنوات الفضائية</a>
   </div>
 
-  <h1>🎬 قائمة أفلام عربية</h1>
-
-  <!-- بداية الفيلم 1 -->
-  <div class="movie-box">
-    <iframe src="https://www.youtube.com/embed/8U1UfpZ5UIc?si=1OiaFdLBYATJCGYI" allowfullscreen></iframe>
-    <div class="movie-title">الفيلم 1: فيلم عنتر ابن ابن ابن ابن شداد بطولة محمد هنيدي</div>
-    <div class="btns">
-      <a href="https://www.youtube.com/watch?v=8U1UfpZ5UIc" class="btn" target="_blank">▶️ مشاهدة</a>
-      <a href="https://example.com/download1.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  <h1>🎬 أفلام عربية</h1>
+  
+  <div class="header">
+    <h1>كلاسيكية و حصرية</h1>
+    <p>استمتع بمشاهدة الفيلم  الخاص بك في جودة عالية مع تحكم كامل</p>
+  </div>
+  </div>
+      <div class="movie-title">الفيلم : الدشاش </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+        
+      <iframe src="https://vk.com/video_ext.php?oid=787385537&id=456260920&hash=885cbf565888c0b6" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+    </div>
+      <div class="movie-title">الفيلم : ريستارت </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+        
+      <iframe src="https://vk.com/video_ext.php?oid=787385537&id=456260909&hash=1b40e7669a350c0b" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+   </div>
+      <div class="movie-title">الفيلم : مستر أكس </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+        
+      <iframe src="https://vk.com/video_ext.php?oid=848084895&id=456245063&hash=21608574a2222dc2" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+    </div>
+      <div class="movie-title">الفيلم : المشروع أكس </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+        
+      <iframe src="https://vk.com/video_ext.php?oid=787385537&id=456260882&hash=812ff28eb1e31034" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
+     </div>
+      <div class="movie-title">الفيلم : هنيدي في الادغال </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+        
+      <iframe src="https://youtube.com/embed/duPtT-o87TM?si=zGMuLx8YkJEsXnVC" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
     </div>
   </div>
-
-  <!-- بداية الفيلم 2 -->
-  <div class="movie-box">
-    <iframe src="https://www.youtube.com/embed/FiTy3_qKmw0?si=yxcA20FCjeSG1D9b" allowfullscreen></iframe>
-    <div class="movie-title">الفيلم 2: فيلم عشان خارجين بطولة حسن الرداد وايمي سميرغانم</div>
-    <div class="btns">
-      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
-      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
-    </div  class="movie-box">
-    <iframe src="https://www.youtube.com/embed/u7VgxLKOTb8?si=Jh-Jqc4nge9lpHa6" allowfullscreen></iframe>
-    <div class="movie-title">الفيلم 3: فيلم الديلر بطولة احمد السقا و خالد النبوي</div>
-    <div class="btns">
-      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
-      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+      <div class="movie-title">الفيلم : الديلر </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/u7VgxLKOTb8?si=Jh-Jqc4nge9lpHa6" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
   </div>
-</div  class="movie-box">
-    <iframe src="https://www.youtube.com/embed/a-B8sSFvYS4?si=ligwvVOXICKmwmys" allowfullscreen></iframe>
-    <div class="movie-title">الفيلم 4: فيلم تحت الترابيزة بطولة محمد سعد</div>
-    <div class="btns">
-      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
-      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+      <div class="movie-title">الفيلم : عشان خارجين </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/FiTy3_qKmw0?si=yxcA20FCjeSG1D9b" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
+   </div>
+      <div class="movie-title">الفيلم 1: فيلم عنتر ابن ابن ابن ابن شداد بطولة محمد هنيدي</div>
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/8U1UfpZ5UIc?si=1OiaFdLBYATJCGYI" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
   </div>
-</div  class="movie-box">
-    <iframe src="https://www.youtube.com/embed/bjkAF89aHaY?si=VXFf3wjDTsjrqP1K" allowfullscreen></iframe>
-    <div class="movie-title">الفيلم 5: فيلم عش البلبل بطولة كريم محمود و سعد الصغير  </div>
-    <div class="btns">
-      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
-      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+      <div class="movie-title">الفيلم : زكي شان </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/j_2kpu0VHbk?si=UROqQvgP6u_GhBHo" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+    </div>
+    
+     </div>
   </div>
-</div  class="movie-box">
-    <iframe src="https://www.youtube.com/embed/cAsqgAID5SY?si=ZTU6Dx4GnAexP-IY" allowfullscreen></iframe>
-    <div class="movie-title">الفيلم 6: فيلم عمر وسلمى 3 بطولة تامر حسني و مي عز الدين  </div>
-    <div class="btns">
-      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
-      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+      <div class="movie-title">الفيلم : عمر وسلمى </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/cAsqgAID5SY?si=ZTU6Dx4GnAexP-IY" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
   </div>
-</div  class="movie-box">
-    <iframe src="https://www.youtube.com/embed/j_2kpu0VHbk?si=UROqQvgP6u_GhBHo" allowfullscreen></iframe>
-    <div class="movie-title">الفيلم 7: فيلم زكي شان بطولة احمد حلمي و ياسمين عبدالعزيز  </div>
-    <div class="btns">
-      <a href="https://www.youtube.com/watch?v=FiTy3_qKmw0" class="btn" target="_blank">▶️ مشاهدة</a>
-      <a href="https://example.com/download2.mp4" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+      <div class="movie-title">الفيلم : عش البلبل </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/bjkAF89aHaY?si=VXFf3wjDTsjrqP1K" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
   </div>
-
+      <div class="movie-title">الفيلم : اللمبي الجديد </div>
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/a-B8sSFvYS4?si=ligwvVOXICKmwmys" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
   
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="gggg" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
+  
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="gggg" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
+  
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="hhhh" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
+  
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="hhhh" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+     </div>
+  
+  <div class="player-container">
+    <div class="video-wrapper">
+      <iframe src="nnn" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    
+    <div class="player-controls">
+      <button class="control-btn">
+        <i class="fas fa-play"></i> تشغيل
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-pause"></i> إيقاف مؤقت
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-expand"></i> ملء الشاشة
+      </button>
+      <button class="control-btn">
+        <i class="fas fa-volume-up"></i> الصوت
+      </button>
+    </div>
+    
+  </div>
+  
+  <div class="featured-videos">
+    <h2>فيديوهات مميزة</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="thumbnail"></div>
+        <div class="video-info">
+          <h3>فيديو مميز 1</h3>
+          <p>مدة: 12:45</p>
+        </div>
+      </div>
+      
+      <div class="video-card">
+        <div class="thumbnail"></div>
+        <div class="video-info">
+          <h3>فيديو مميز 2</h3>
+          <p>مدة: 08:32</p>
+        </div>
+      </div>
+      
+      <div class="video-card">
+        <div class="thumbnail"></div>
+        <div class="video-info">
+          <h3>فيديو مميز 3</h3>
+          <p>مدة: 15:20</p>
+        </div>
+      </div>
+      
+      <div class="video-card">
+        <div class="thumbnail"></div>
+        <div class="video-info">
+          <h3>فيديو مميز 4</h3>
+          <p>مدة: 22:10</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>© 2023 مشغل الفيديو المباشر | جميع الحقوق محفوظة</p>
+  </div>
+  
+  <script>
+    // إضافة وظائف التحكم
+    document.addEventListener('DOMContentLoaded', function() {
+      const iframe = document.querySelector('iframe');
+      const playBtn = document.querySelector('.fa-play').closest('.control-btn');
+      const pauseBtn = document.querySelector('.fa-pause').closest('.control-btn');
+      const fullscreenBtn = document.querySelector('.fa-expand').closest('.control-btn');
+      const volumeBtn = document.querySelector('.fa-volume-up').closest('.control-btn');
+      
+      // زر التشغيل
+      playBtn.addEventListener('click', function() {
+        // في الواقع، تحتاج إلى التحكم في الفيديو عبر واجهة برمجة التطبيقات لـ VK
+        // هذا مثال فقط للتوضيح
+        alert('سيتم تشغيل الفيديو');
+      });
+      
+      // زر الإيقاف المؤقت
+      pauseBtn.addEventListener('click', function() {
+        alert('تم إيقاف الفيديو مؤقتًا');
+      });
+      
+      // زر ملء الشاشة
+      fullscreenBtn.addEventListener('click', function() {
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { /* Firefox */
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+          iframe.msRequestFullscreen();
+        }
+      });
+      
+      // زر الصوت
+      volumeBtn.addEventListener('click', function() {
+        const icon = volumeBtn.querySelector('i');
+        if (icon.classList.contains('fa-volume-up')) {
+          icon.classList.remove('fa-volume-up');
+          icon.classList.add('fa-volume-mute');
+          alert('تم كتم الصوت');
+        } else {
+          icon.classList.remove('fa-volume-mute');
+          icon.classList.add('fa-volume-up');
+          alert('تم تشغيل الصوت');
+        }
+      });
+      
+      // تأثيرات عند تحميل الصفحة
+      setTimeout(() => {
+        document.querySelector('.header').style.opacity = 1;
+        document.querySelector('.player-container').style.transform = 'translateY(0)';
+      }, 100);
+    });
+  </script>
 </body>
 </html>
