@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>أفلام أجنبية</title>
+  <title>🎬 أفلام أجنبية</title>
   <style>
     body {
       background: #F0FFFF;
@@ -10,16 +10,19 @@
       text-align: center;
       padding: 20px;
     }
+
     h1 {
       color: #000000;
       margin-bottom: 30px;
     }
+
     .navbar {
       background-color: #B0E0E6;
       overflow: auto;
       text-align: center;
       padding: 10px 0;
     }
+
     .navbar a {
       color: black;
       text-decoration: none;
@@ -27,81 +30,75 @@
       display: inline-block;
       font-size: 14px;
     }
+
     .navbar a:hover {
       background-color: #1a1aff;
       border-radius: 8px;
     }
-   
-    .series-list {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: right;
-    }
-    .series-title {
-      background-color: #DDEEFF;
-      padding: 15px 20px;
+
+    .movie-box {
+      margin: 40px auto;
+      max-width: 800px;
+      background-color: #ffffff;
       border-radius: 15px;
-      cursor: pointer;
-      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border-radius: 12px;
+      border: none;
+    }
+
+    .movie-title {
+      margin-top: 15px;
       font-size: 20px;
       color: #003366;
-      margin-bottom: 10px;
-      user-select: none;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      transition: background-color 0.3s;
-    }
-    .series-title:hover {
-      background-color: #B0D0FF;
-    }
-    .episode-list {
-      list-style: none;
-      padding: 0 20px 20px 20px;
-      margin: 0 0 20px 0;
-      display: none; 
-      background-color: #F0F8FF;
-      border-radius: 0 0 15px 15px;
-      box-shadow: inset 0 0 10px #CFE2FF;
-    }
-    .episode-list li {
-      padding: 8px 0;
-      border-bottom: 1px solid #C0D8FF;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .episode-list li:last-child {
-      border-bottom: none;
-    }
-    .episode-name {
       font-weight: bold;
-      color: #003366;
     }
+
+    .btns {
+      margin-top: 15px;
+    }
+
     .btn {
       background-color: #4682B4;
       color: white;
       border: none;
-      padding: 6px 14px;
-      margin-left: 10px;
-      border-radius: 8px;
-      cursor: pointer;
+      padding: 8px 18px;
+      border-radius: 10px;
+      margin: 5px;
       font-size: 14px;
-      font-weight: bold;
-      transition: background-color 0.3s;
+      cursor: pointer;
       text-decoration: none;
       display: inline-block;
+      transition: background-color 0.3s;
     }
+
     .btn:hover {
       background-color: #5a9bd5;
     }
+
     .btn-download {
       background-color: #32CD32;
     }
+
     .btn-download:hover {
       background-color: #45d845;
+    }
+    .series-poster {
+      width: 150px;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-left: 15px;
     }
   </style>
 </head>
 <body>
+
   <div class="navbar">
     <a href="index.html">🏠 الرئيسية</a>
     <a href="arabic-series.html">📺 مسلسلات عربية</a>
@@ -111,6 +108,243 @@
     <a href="anime.html">🎌 الأنمي</a>
     <a href="episode_external_with_download.html">🛰 بث مباشر للقنوات الفضائية</a>
   </div>
-  <h1>أفلام أجنبية</h1>
+
+  <h1>🎬 قائمة أفلام أجنبية</h1>
+
+  <!-- بداية الفيلم 1 -->
+  <div class="movie-box">
+       <img src="ti.png" alt="Titanic" class="series-poster">
+   <a src="https://disk.yandex.com/i/VDJnG8Pm9Z18MQ" allowfullscreen>
+    <div class="movie-title">الفيلم 1: فيلم تاتنيك (غرق السفينة)   </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/VDJnG8Pm9Z18MQ" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/VDJnG8Pm9Z18MQ" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+  </div>
+  <div class="movie-box">
+       <img src="he.png" alt="heads of state" class="series-poster">
+   <a src="https://disk.yandex.com/i/Fw9QxScQ3Gp0Aw" allowfullscreen>
+    <div class="movie-title">الفيلم : رؤساء الدول(heads of state) 
+    </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/Fw9QxScQ3Gp0Aw" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/Fw9QxScQ3Gp0Aw" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="wm.png" alt="A Working Man" class="series-poster">
+   <a src="https://disk.yandex.com/i/75d_QkRZPI1Uwg" allowfullscreen>
+    <div class="movie-title">الفيلم : (A Working Man
+
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/75d_QkRZPI1Uwg" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/75d_QkRZPI1Uwg" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="ey.png" alt="Heart Eyes" class="series-poster">
+   <a src="https://disk.yandex.com/i/NKh5H1iJL5HJIw" allowfullscreen>
+    <div class="movie-title">الفيلم : (Heart Eyes
+
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/NKh5H1iJL5HJIw" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/NKh5H1iJL5HJIw" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+</div>
+<div class="movie-box">
+       <img src="cp.png" alt="Captain America Brave New World" class="series-poster">
+   <a src="https://disk.yandex.com/i/-D3PRycHSncJ-Q" allowfullscreen>
+    <div class="movie-title">الفيلم : (Captain America Brave New World
+
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/-D3PRycHSncJ-Q" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/-D3PRycHSncJ-Q" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="bf.png" alt="Blood father" class="series-poster">
+   <a src="https://disk.yandex.com/i/Srgyge4NNtB1hw" allowfullscreen>
+    <div class="movie-title">الفيلم : (Blood father
+
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/Srgyge4NNtB1hw" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/Srgyge4NNtB1hw" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="ru.png" alt="prityazhenie" class="series-poster">
+   <a src="https://disk.yandex.com/i/RcYLmyuRliPYRg" allowfullscreen>
+    <div class="movie-title">الفيلم : (prityazhenie
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/RcYLmyuRliPYRg" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/RcYLmyuRliPYRg" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="id.png" alt="Into the Deep 2025 " class="series-poster">
+   <a src="https://disk.yandex.com/i/doUsTDpk3qBL7Q" allowfullscreen>
+    <div class="movie-title">الفيلم : (Into the Deep 2025 
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/doUsTDpk3qBL7Q" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/doUsTDpk3qBL7Q" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="ba.png" alt="Back in Action" class="series-poster">
+   <a src="https://disk.yandex.com/i/_e9Dbe4GAxgJ-w" allowfullscreen>
+    <div class="movie-title">الفيلم : (Back in Action
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/_e9Dbe4GAxgJ-w" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/_e9Dbe4GAxgJ-w" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="kn.png" alt="Knowing" class="series-poster">
+   <a src="https://disk.yandex.com/i/soP_1swlDK0aqw" allowfullscreen>
+    <div class="movie-title">الفيلم : (Knowing
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/soP_1swlDK0aqw" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/soP_1swlDK0aqw" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="ar.png" alt="Armor" class="series-poster">
+   <a src="https://disk.yandex.com/i/SqkgKBsT5uvIiQ" allowfullscreen>
+    <div class="movie-title">الفيلم : (Armor
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/SqkgKBsT5uvIiQ" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/SqkgKBsT5uvIiQ" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="jo.png" alt="joker 2" class="series-poster">
+   <a src="https://disk.yandex.com/i/v6FnE-42jn7q4A" allowfullscreen>
+    <div class="movie-title">الفيلم : (joker 2
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/v6FnE-42jn7q4A" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/v6FnE-42jn7q4A" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="te.png" alt="Terrifier 1" class="series-poster">
+   <a src="https://disk.yandex.com/i/t1iXUSTBOr3xVA" allowfullscreen>
+    <div class="movie-title">الفيلم : (Terrifier 1
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/t1iXUSTBOr3xVA" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/t1iXUSTBOr3xVA" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="tr.png" alt="‏The Wild Robo" class="series-poster">
+   <a src="https://disk.yandex.com/i/Yaba7deDmUcsGw" allowfullscreen>
+    <div class="movie-title">الفيلم : (‏The Wild Robo
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/Yaba7deDmUcsGw" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/Yaba7deDmUcsGw" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="sl.png" alt="Salems Lot" class="series-poster">
+   <a src="https://disk.yandex.com/i/jpn9Z6UOt2CptA" allowfullscreen>
+    <div class="movie-title">الفيلم : (‏Salems Lot) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/jpn9Z6UOt2CptA" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/jpn9Z6UOt2CptA" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="al.png" alt="Alien" class="series-poster">
+   <a src="https://disk.yandex.com/i/jK5GX_gS_QFx_A" allowfullscreen>
+    <div class="movie-title">الفيلم : (‏Alien) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/jK5GX_gS_QFx_A" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/jK5GX_gS_QFx_A" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="tk.png" alt="The killer game" class="series-poster">
+   <a src="https://disk.yandex.com/i/ndYSGr1AhYbJrQ" allowfullscreen>
+    <div class="movie-title">الفيلم : (‏The killer game) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/ndYSGr1AhYbJrQ" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/ndYSGr1AhYbJrQ" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="Chuan shuo.png" alt="Chuan shuo 370" class="series-poster">
+   <a src="https://disk.yandex.com/i/L_asSEJkH3ullg" allowfullscreen>
+    <div class="movie-title">الفيلم : (Chuan shuo
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/L_asSEJkH3ullg" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/L_asSEJkH3ullg" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+    <div class="movie-box">
+       <img src="Karate Kid Legends.png" alt="Karate Kid Legends " class="series-poster">
+   <a src="https://disk.yandex.com/i/YQ29AeXc-fAumg" allowfullscreen>
+    <div class="movie-title">الفيلم : (Karate Kid Legends
+) </div>
+    <div class="btns">
+      <a href="https://disk.yandex.com/i/YQ29AeXc-fAumg" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://disk.yandex.com/i/YQ29AeXc-fAumg" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div>
+    </div>
+  <!-- بداية الفيلم 2 -->
+  <div class="movie-box">
+    <iframe src="https://youtube.com/embed/XWJb7tEtzLM?si=IFSg8yxqK8MSZJAj" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 2: فيلم الشرطي بطولة جاكي شان  </div>
+    <div class="btns">
+      <a href="https://youtube.com/embed/XWJb7tEtzLM?si=IFSg8yxqK8MSZJAj" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://youtube.com/embed/XWJb7tEtzLM?si=IFSg8yxqK8MSZJAj" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+    </div  class="movie-box">
+    <iframe src="https://youtube.com/embed/ju02DEmarkU?si=Fy7y7sAhUfhTXiU_" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 3: فيلم H.Brothers بطولة جاكي شان </div>
+    <div class="btns">
+      <a href="https://youtube.com/embed/ju02DEmarkU?si=Fy7y7sAhUfhTXiU_" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://youtube.com/embed/ju02DEmarkU?si=Fy7y7sAhUfhTXiU_" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  </div>
+</div  class="movie-box">
+    <iframe src="https://www.fushaar.com/movie/fast-furious-presents-hobbs-shaw/" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 4:فيلم السائق بطولة جيسون ستاثام و ذاروك</div>
+    <div class="btns">
+      <a href="https://www.fushaar.com/movie/fast-furious-presents-hobbs-shaw/" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://www.fushaar.com/movie/fast-furious-presents-hobbs-shaw/" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  </div>
+</div  class="movie-box">
+    <iframe src="https://www.fushaar.com/movie/the-5th-wave/" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 5:فيلم نهاية العالم    </div>
+    <div class="btns">
+      <a href="https://www.fushaar.com/movie/the-5th-wave/" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://www.fushaar.com/movie/the-5th-wave/" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  </div>
+</div  class="movie-box">
+    <iframe src="https://www.fushaar.link/movie/peter-rabbit/" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 6: فيلم الارنب بيتر الجزء الاول    </div>
+    <div class="btns">
+      <a href="https://www.fushaar.link/movie/peter-rabbit/" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://www.fushaar.link/movie/peter-rabbit/" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  </div>
+</div  class="movie-box">
+    <iframe src="https://www.fushaar.com/movie/spider-man-2/" allowfullscreen></iframe>
+    <div class="movie-title">الفيلم 7: فيلم سبايدر مان  </div>
+    <div class="btns">
+      <a href="https://www.fushaar.com/movie/spider-man-2/" class="btn" target="_blank">▶️ مشاهدة</a>
+      <a href="https://www.fushaar.com/movie/spider-man-2/" class="btn btn-download" target="_blank">⬇️ تحميل</a>
+  </div>
+
+  
 </body>
 </html>
