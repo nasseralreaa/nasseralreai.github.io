@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>مسلسلات تركية</title>
-   <style>
+  <style>
     body {
       background: #F0FFFF;
       font-family: 'Cairo', sans-serif;
@@ -31,7 +31,6 @@
       background-color: #1a1aff;
       border-radius: 8px;
     }
-   
     .series-list {
       max-width: 700px;
       margin: 0 auto;
@@ -57,7 +56,7 @@
       list-style: none;
       padding: 0 20px 20px 20px;
       margin: 0 0 20px 0;
-      display: none; 
+      display: none;
       background-color: #F0F8FF;
       border-radius: 0 0 15px 15px;
       box-shadow: inset 0 0 10px #CFE2FF;
@@ -81,7 +80,7 @@
       color: white;
       border: none;
       padding: 6px 14px;
-      margin-left: 10px;
+      margin: 0 5px;
       border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
@@ -99,6 +98,45 @@
     .btn-download:hover {
       background-color: #45d845;
     }
+    .btn-close {
+      background-color: #ff3333;
+      color: white;
+      margin-top: 10px;
+    }
+    .btn-container {
+      display: flex;
+      flex-direction: row;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* نسبة 16:9 */
+      height: 0;
+      overflow: hidden;
+      max-width: 700px;
+      margin: 15px auto 30px;
+      display: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: none;
+      border-radius: 10px;
+    }
+    .video-wrapper {
+      margin-top: 15px;
+      padding: 10px;
+      background: #F0F8FF;
+      border-radius: 10px;
+    }
+    .close-btn-container {
+      text-align: center;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -111,6 +149,1786 @@
     <a href="anime.html">🎌 الأنمي</a>
     <a href="episode_external_with_download.html">🛰 بث مباشر للقنوات الفضائية</a>
   </div>
+  
   <h1>مسلسلات تركية</h1>
+  
+  <!-- مسلسل المؤسس عثمان -->
+  <div class="series-list">
+    <div class="series-title" onclick="toggleEpisodes('turkish-series-1')">مسلسل المؤسس عثمان- الموسم السادس</div>
+    <ul id="turkish-series-1" class="episode-list">
+      <li>
+        <span class="episode-name">الحلقة 166</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x972fx8', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x972fx8" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 167</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x97h9cm', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x97h9cm" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 168</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x98b6xm', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x98b6xm" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 169</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x98qr46', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x98qr46" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 170</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x994kx6', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x98qr46" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 171</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x99hjd2', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x99hjd2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 172</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x99v2q6', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x99v2q6" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 173</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9a9baq', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9a9baq" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 174</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9an0mo', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9an0mo" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 175</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9b07ou', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9b07ou" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 176</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9bcp3k', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9bcp3k" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 177</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9cfo9a', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9cfo9a" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 178</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9d8gsg', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9d8gsg" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 179</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9dlejk', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9dlejk" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 180</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9e4h1q', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9e4h1q" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 181</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9epxdc', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9epxdc" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 182</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9f9oxa', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9f9oxa" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 183</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9fmx3a', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9fmx3a" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 184</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9g0b00', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9g0b00" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 185</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9gflg8', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9gflg8" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 186</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9guq3w', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9guq3w" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 187</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9hn52g', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9hn52g" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 188</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9i0udc', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9i0udc" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 189</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9iehe6', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9iehe6" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 190</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9iso9q', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9iso9q" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 191</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9j50y0', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9j50y0" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 192</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9jxgkq', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9jxgkq" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 193</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9kejd0', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9kejd0" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 194 والاخيرة</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9ktcpi', 'turkish-series-1')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9ktcpi" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+    </ul>
+    <!-- مشغل الفيديو الخاص بهذا المسلسل -->
+    <div id="video-container-turkish-series-1" class="video-container"></div>
+  </div>
+  
+  <!-- مسلسل حكاية ليلة -->
+  <div class="series-list">
+    <div class="series-title" onclick="toggleEpisodes('hkaia')">مسلسل حكاية ليلة</div>
+    <ul id="hkaia" class="episode-list">
+      <li>
+        <span class="episode-name">الحلقة 1</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x960r4e', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x960r4e" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 2</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x98kkwu', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x98kkwu" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 3</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x95ui9m', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x95ui9m" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 4</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x967u0g', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x967u0g" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 5</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x96lo5a', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x96lo5a" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 6</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x96ztg6', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x96ztg6" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 7</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x97eiv6', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x97eiv6" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 8</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x97uj8g', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x97uj8g" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 9</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x988l9w', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x988l9w" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 10</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x98oifu', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x98oifu" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 11</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9929s6', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9929s6" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 12</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x99gk2u', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x99gk2u" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 13</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x99u0zm', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x99u0zm" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 14</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9a77qw', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9a77qw" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 15</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9alfcc', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9alfcc" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 16</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9ayso6', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9ayso6" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 17</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9bbdla', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9bbdla" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 18</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9cdn9c', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9cdn9c" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 19</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9d6kks', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9d6kks" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 20</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9djtse', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9djtse" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 21</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9e2p80', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9e2p80" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 22</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9enw5g', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9enw5g" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 23</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9f6lxg', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9f6lxg" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 24</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9fkz8o', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9fkz8o" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 25</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9fycky', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9fycky" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 26</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9gelos', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9gelos" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 27</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9gst3a', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9gst3a" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 28</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9hkt1o', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9hkt1o" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 29</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9hyyyq', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9hyyyq" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 30</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9irnbw', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9irnbw" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 31</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9j361c', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9j361c" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 32</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9jgs28', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9jgs28" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 33</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9jvih8', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9jvih8" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 34</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9kbwpa', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9kbwpa" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 35 والاخيرة</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://geo.dailymotion.com/player.html?video=x9kr6dk', 'hkaia')">مشاهدة</a>
+          <a href="https://geo.dailymotion.com/player.html?video=x9kr6dk" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+    </ul>
+    <!-- مشغل الفيديو الخاص بهذا المسلسل -->
+    <div id="video-container-hkaia" class="video-container"></div>
+  </div>
+  
+  <!-- مسلسل المنظمة -->
+  <div class="series-list">
+    <div class="series-title" onclick="toggleEpisodes('Teskilat')">مسلسل المنظمة</div>
+    <ul id="Teskilat" class="episode-list">
+      <li>
+        <span class="episode-name">الحلقة 1</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-1/', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-1/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 2</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-2/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-2/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 3</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-3/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-3/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 4</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-4/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-4/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 5</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-5/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-5/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 6</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-6/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-6/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 7</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-7/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-7/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 8</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-8/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-8/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 9</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-9/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-9/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 10</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-10/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-10/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 11</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-11/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-11/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 12</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-12/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-12/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 13</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-13/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-13/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 14</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-14/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-14/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 15</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-15/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-15/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 16</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-16/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-16/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 17</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-17/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-17/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 18</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-18/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-18/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 19</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-19/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-19/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 20</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-20/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-20/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 21</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-21/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-21/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 22</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-22/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-22/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 23</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-23/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-23/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 24</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-24/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-24/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 25</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-25/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-25/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 26</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-26/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-26/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 27</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-27/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-27/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 28</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-28/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-28/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 29</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-29/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-29/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 30</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-30/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-30/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 31</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-31/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-31/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 32</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-32/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-32/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 33</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-33/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-33/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 34</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-34/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-34/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 35 </span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/teskilat-ep-35/?serv=2', 'Teskilat')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/teskilat-ep-35/?serv=2" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+    </ul>
+    <!-- مشغل الفيديو الخاص بهذا المسلسل -->
+    <div id="video-container-Teskilat" class="video-container"></div>
+  </div>
+  
+  <!-- مسلسل تل الرياح -->
+  <div class="series-list">
+    <div class="series-title" onclick="toggleEpisodes('Ruzgarli.Tepe')">مسلسل تل الرياح</div>
+    <ul id="Ruzgarli.Tepe" class="episode-list">
+      <li>
+        <span class="episode-name">الحلقة 1</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-1/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-1/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 2</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-2/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-2/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 3</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-3/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-3/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 4</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-4/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-4/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 5</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-5/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-5/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 6</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-6/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-6/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 7</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-7/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-7/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 8</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-8/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-8/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 9</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-9/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-9/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 10</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-10/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-10/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 11</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-11/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-11/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 12</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-12/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-12/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 13</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-13/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-13/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 14</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-14/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-14/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 15</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-15/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-15/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 16</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-16/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-16/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 17</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-17/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-17/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 18</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-18/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-18/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 19</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-19/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-19/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 20</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-20/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-20/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 21</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-21/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-21/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 22</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-22/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-22/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 23</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-23/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-23/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 24</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-24/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-24/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 25</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-25/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-25/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 26</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-26/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-26/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 27</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-27/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-27/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 28</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-28/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-28/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 29</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-29/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-29/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 30</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-30/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-30/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 31</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-31/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-31/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 32</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-32/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-32/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 33</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-33/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-33/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 34</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-34/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-34/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 35 </span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-35/', 'Ruzgarli.Tepe')">مشاهدة</a>
+          <a href="https://www.qvid.cc/albaplayer/Ruzgarli.Tepe-ep-35/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+    </ul>
+    <!-- مشغل الفيديو الخاص بهذا المسلسل -->
+    <div id="video-container-Ruzgarli.Tepe" class="video-container"></div>
+  </div>
+
+  
+  <!-- مسلسل صلاح الدين الأيوبي-->
+  <div class="series-list">
+    <div class="series-title" onclick="toggleEpisodes('Saladin')">مسلسل فاتح  القدس صلاح الدين الأيوبي</div>
+    <ul id="Saladin" class="episode-list">
+      <li>
+        <span class="episode-name">الحلقة 1</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-1/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-1/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 2</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-2/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-2/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 3</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-3/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-3/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 4</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-4/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-4/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 5</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-5/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-5/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 6</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-6/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-6/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 7</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-7/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-7/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 8</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-8/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-8/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 9</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-9/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-9/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 10</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-10/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-10/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 11</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-11/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-11/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 12</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-12/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-12/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 13</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-13/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-13/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 14</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-14/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-14/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 15</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-15/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-15/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 16</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-16/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-16/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 17</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-17/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-17/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 18</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-18/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-18/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 19</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-19/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-19/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 20</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-20/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-20/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 21</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-21/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-21/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 22</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-22/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-22/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 23</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-23/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-23/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 24</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-24/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-24/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 25</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-25/', ج ٠'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-25/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 26</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-26/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-26/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 27</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-27/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-27/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 28</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-28/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-28/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 29</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-29/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-29/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 30</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-30/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-30/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 31</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-31/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-31/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 32</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-32/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-32/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 33</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-33/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-33/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 34</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-34/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-34/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 35 </span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-35/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-35/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 36</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-36/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-36/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 37</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-37/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-37/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 38</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-38/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-38/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 39</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-39/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-39/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 40</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-40/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-40/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 41</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-41/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-41/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 42</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-42/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-42/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 43</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-43/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-43/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 44</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-44/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-44/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 45</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-45/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-45/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 46</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-46/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-46/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+<li>
+        <span class="episode-name">الحلقة 47</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-47/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-47/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 48</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-48/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-48/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 49</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-49/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-49/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 50</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-50/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-50/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 51</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-51/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-51/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 52</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-52/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-52/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 53</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-53/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-53/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 54</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-54/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-54/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 55</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-55/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-55/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 56</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-56/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-56/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 57</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-57/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-57/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+<li>
+        <span class="episode-name">الحلقة 58 والاخيرة</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Saladin-ep-58/', 'Saladin')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Saladin-ep-58/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      </div>
+  
+  <!-- مسلسل البراعم الحمراء-->
+  <div class="series-list">
+    <div class="series-title" onclick="toggleEpisodes('Kizil.Goncalar')">مسلسل البراعم الحمراء </div>
+    <ul id="Kizil.Goncalar" class="episode-list">
+      <li>
+        <span class="episode-name">الحلقة 1</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-1/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-1/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 2</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-2/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-2/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 3</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-3/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-3/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 4</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-4/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-4/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 5</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-5/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-5/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 6</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-6/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-6/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 7</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-7/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-7/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 8</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-8/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-8/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 9</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-9/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-9/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 10</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-10/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-10/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 11</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-11/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-11/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 12</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-12/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-12/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 13</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-13/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-13/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 14</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-14/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-14/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 15</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-15/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-15/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 16</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-16/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-16/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 17</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-17/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-17/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 18</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-18/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-18/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 19</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-19/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-19/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 20</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-20/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-20/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 21</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-21/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-21/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 22</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-22/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-22/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 23</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-23/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-23/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 24</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-24/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-24/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 25</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-25/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-25/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 26</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-26/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-26/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 27</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-27/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-27/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 28</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-28/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-28/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 29</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-29/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-29/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 30</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-30/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-30/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 31</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-31/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-31/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 32</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-32/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-32/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 33</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-33/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-33/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 34</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-34/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-34/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 35 </span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-35/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-35/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+<li>
+        <span class="episode-name">الحلقة 36</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-36/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-36/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+<li>
+        <span class="episode-name">الحلقة 37</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-37/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-37/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 38</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-38/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-38/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 39</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-39/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-39/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 40</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-40/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-40/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 41</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-41/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-41/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 42</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-42/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-42/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 43</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-43/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-43/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 44</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-44/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-44/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 45</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-45/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-45/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+      <li>
+        <span class="episode-name">الحلقة 46</span>
+        <div class="btn-container">
+          <a href="#" class="btn" onclick="showVideo('https://qvid.cc/albaplayer/Kizil.Goncalar-ep-46/', 'Kizil.Goncalar')">مشاهدة</a>
+          <a href="https://qvid.cc/albaplayer/Kizil.Goncalar-ep-46/" class="btn btn-download" download>تحميل</a>
+        </div>
+      </li>
+    </ul>
+    </ul>
+    <!-- مشغل الفيديو الخاص بهذا المسلسل -->
+    <div id="video-container-Kizil.Goncalar" class="video-container"></div>
+  </div>
+
+    </ul>
+    <!-- مشغل الفيديو الخاص بهذا المسلسل -->
+    <div id="video-container-Saladin" class="video-container"></div>
+  </div>
+  
+
+  <script>
+    function toggleEpisodes(id) {
+      const list = document.getElementById(id);
+      list.style.display = list.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showVideo(url, containerId) {
+      // إخفاء جميع مشغلات الفيديو
+      const allPlayers = document.querySelectorAll('.video-container');
+      allPlayers.forEach(player => {
+        player.style.display = 'none';
+        player.innerHTML = '';
+      });
+      
+      // إنشاء مشغل الفيديو الجديد
+      const containerIdFull = `video-container-${containerId}`;
+      const container = document.getElementById(containerIdFull);
+      
+      // التحقق من وجود العنصر
+      if (!container) {
+        console.error(`Container not found: ${containerIdFull}`);
+        return;
+      }
+      
+      container.innerHTML = `
+        <iframe src="${url}" allowfullscreen></iframe>
+        <div class="close-btn-container">
+          <button class="btn btn-close" onclick="closeVideo('${containerId}')">إغلاق الفيديو</button>
+        </div>
+      `;
+      container.style.display = 'block';
+      
+      // التمرير إلى الفيديو مع إزاحة مناسبة
+      setTimeout(() => {
+        const elementPosition = container.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - 100; // إزاحة 100px من الأعلى
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }, 300);
+    }
+    
+    function closeVideo(containerId) {
+      const container = document.getElementById(`video-container-${containerId}`);
+      if (container) {
+        container.style.display = 'none';
+        container.innerHTML = '';
+      }
+    }
+    
+</script>
 </body>
 </html>
