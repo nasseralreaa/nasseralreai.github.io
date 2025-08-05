@@ -1,0 +1,893 @@
+ <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>مسلسلات عربية</title>
+  <style>
+    body {
+      background: #F0FFFF;
+      font-family: 'Cairo', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #000000;
+      margin-bottom: 30px;
+    }
+    
+    .navbar {
+      background-color: #B0E0E6;
+      overflow: auto;
+      text-align: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: inline-block;
+      font-size: 14px;
+    }
+    .navbar a:hover {
+      background-color: #1a1aff;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .video-player-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #B0E0E6;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+    
+    .video-player-title {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 15px;
+      text-align: center;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+    
+    .video-player {
+      width: 100%;
+      height: 450px;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .video-player iframe, 
+    .video-player video {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .close-player-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ff4757;
+      color: white;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s;
+    }
+    
+    .close-player-btn:hover {
+      background: #ff6b81;
+      transform: scale(1.1);
+    }
+    
+    .no-video-selected {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: #aaa;
+      font-size: 20px;
+      background: #222;
+      flex-direction: column;
+    }
+    
+    .no-video-selected i {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .series-list {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .series-block {
+      margin-bottom: 30px;
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    
+    .series-block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .series-thumbnail {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    
+    .series-thumbnail:hover {
+      transform: scale(1.03);
+    }
+
+    .series-title {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      padding: 15px 20px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 20px;
+      color: white;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      user-select: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .series-title:hover {
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    
+    .series-title::after {
+      content: "▼";
+      position: absolute;
+      right: 20px;
+      transition: transform 0.3s;
+    }
+    
+    .series-title.active::after {
+      transform: rotate(180deg);
+    }
+
+    .episode-list {
+      list-style: none;
+      padding: 0 20px 20px 20px;
+      margin: 0 0 20px 0;
+      display: none;
+      background-color: #F0F8FF;
+      border-radius: 0 0 15px 15px;
+      box-shadow: inset 0 0 10px #CFE2FF;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    
+    .episode-list::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .episode-list::-webkit-scrollbar-track {
+      background: #e1e8ff;
+      border-radius: 10px;
+    }
+    
+    .episode-list::-webkit-scrollbar-thumb {
+      background: #4facfe;
+      border-radius: 10px;
+    }
+    
+    .episode-list::-webkit-scrollbar-thumb:hover {
+      background: #00f2fe;
+    }
+
+    .episode-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #C0D8FF;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    
+    .episode-list li:hover {
+      background: #e1edff;
+    }
+
+    .episode-list li:last-child {
+      border-bottom: none;
+    }
+
+    .episode-name {
+      font-weight: bold;
+      color: #003366;
+      font-size: 16px;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #3498db, #1a5ca3);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin-left: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      min-width: 80px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #1a5ca3, #3498db);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .btn-download {
+      background: linear-gradient(to right, #2ecc71, #27ae60);
+    }
+
+    .btn-download:hover {
+      background: linear-gradient(to right, #27ae60, #2ecc71);
+    }
+    
+    .footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #B0E0E6;
+      border-radius: 15px;
+      color: #003366;
+      font-size: 14px;
+    }
+    
+    @media (max-width: 768px) {
+      .video-player {
+        height: 300px;
+      }
+      
+      .series-title {
+        font-size: 18px;
+        padding: 12px 15px;
+      }
+      
+      .episode-name {
+        font-size: 14px;
+      }
+      
+      .btn {
+        padding: 6px 12px;
+        font-size: 13px;
+        min-width: 70px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .video-player {
+        height: 250px;
+      }
+      
+      .series-title {
+        font-size: 16px;
+      }
+      
+      .episode-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      
+      .btn {
+        margin-left: 0;
+        margin-top: 5px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">🏠 الرئيسية</a>
+    <a href="arabic-series.html">📺 مسلسلات عربية</a>
+    <a href="arabic-movies.html">🎬 أفلام عربية</a>
+    <a href="kids.html">👶 الأطفال</a>
+    <a href="religion.html"> وثائقيات📽</a>
+    <a href="anime.html">🎌 الأنمي</a>
+    <a href="episode_external_with_download.html">🛰 بث مباشر للقنوات الفضائية</a>
+  </div>
+
+  <h1>📺 مسلسلات عربية</h1>
+  
+  <!-- مشغل الفيديو -->
+  <div class="video-player-container">
+    <div class="video-player-title" id="player-title">اختر حلقة لمشاهدتها</div>
+    <button class="close-player-btn" onclick="closeVideoPlayer()">✕</button>
+    <div class="video-player" id="video-player">
+      <div class="no-video-selected">
+        <i>▶️</i>
+        <div>لم يتم اختيار أي فيديو للعرض</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="series-list">
+
+   
+    <div class="series-block">
+      <img src="madah.png" alt="صورة مسلسل المداح1" class="series-thumbnail">
+      <div class="series-title" onclick="toggleEpisodes('madah')">مسلسل المداح الموسم الاول ▼</div>
+      <ul id="madah" class="episode-list">
+        <li>
+          <span class="episode-name">الحلقة 1</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E01/', 'المداح - الحلقة 1')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E01/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 2</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E02/', 'المداح - الحلقة 2')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E02/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 3</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E03/', 'المداح - الحلقة 3')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E03/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 4</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E04/', 'المداح - الحلقة 4')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E04/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 5</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E05/', 'المداح - الحلقة 5')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E05/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 6</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E06/', 'المداح - الحلقة 6')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E06/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 7</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E07/', 'المداح - الحلقة 7')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E07/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 8</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E08/', 'المداح - الحلقة 8')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E08/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 9</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E09/', 'المداح - الحلقة 9')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E09/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 10</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E10/', 'المداح - الحلقة 10')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E10/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 11</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E11/', 'المداح - الحلقة 11')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E11/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 12</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E12/', 'المداح - الحلقة 12')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E12/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 13</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E13/', 'المداح - الحلقة 13')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E13/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 14</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E14/', 'المداح - الحلقة 14')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E14/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 15</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E15/', 'المداح - الحلقة 15')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E15/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 16</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E16/', 'المداح - الحلقة 16')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E16/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 17</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E17/', 'المداح - الحلقة 17')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E17/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 18</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E18/', 'المداح - الحلقة 18')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E18/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 19</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E19/', 'المداح - الحلقة 19')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E19/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 20</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E20/', 'المداح - الحلقة 20')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E20/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 21</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E21/', 'المداح - الحلقة 21')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E21/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 22</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E22/', 'المداح - الحلقة 22')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E22/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 23</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E23/', 'المداح - الحلقة 23')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E23/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 24</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E24/', 'المداح - الحلقة 24')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E24/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 25</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E25/', 'المداح - الحلقة 25')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E25/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 26</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E26/', 'المداح - الحلقة 26')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E26/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 27</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E27/', 'المداح - الحلقة 27')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E27/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 28</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E28/', 'ألمداح - الحلقة 28')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E28/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 29</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E29/', 'المداح - الحلقة 29')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E29/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 30 والاخيرة</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://qvid.cc/albaplayer/Al.Maddah.S01E30/', 'المداح - الحلقة 30')">مشاهدة</a>
+            <a href="https://qvid.cc/albaplayer/Al.Maddah.S01E30/" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+      </ul>         
+    </div>
+
+ 
+    <div class="series-block">
+      <img src="atawla.png" alt="صورة العتاولة" class="series-thumbnail">
+      <div class="series-title" onclick="toggleEpisodes('atawla')">مسلسل العتاولة الموسم  الاول ▼</div>
+      <ul id="atawla" class="episode-list">
+        <li>
+          <span class="episode-name">الحلقة 1</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246464&hash=344266507356da2e', 'العتاولة - الحلقة 1')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246464&hash=344266507356da2e" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 2</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246468&hash=31b9a7ab036bb4bc', 'العتاولة - الحلقة 2')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246468&hash=31b9a7ab036bb4bc" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 3</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246456&hash=a2899e9baa9e96de', 'العتاولة - الحلقة 3')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246456&hash=a2899e9baa9e96de" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+           
+          <span class="episode-name">الحلقة 4</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246465&hash=53ae6d068b33f0c3', 'العتاولة - الحلقة 4')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246465&hash=53ae6d068b33f0c3" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 5</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246461&hash=03e0eb2b738b5cf2', 'العتاولة - الحلقة 5')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246461&hash=03e0eb2b738b5cf2" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 6</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246467&hash=a0651764773e5a58', 'العتاولة - الحلقة 6')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246467&hash=a0651764773e5a58" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+           
+          <span class="episode-name">الحلقة 7</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246446&hash=4199dd88d3a9b6b0', 'العتاولة - الحلقة 7')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246446&hash=4199dd88d3a9b6b0" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 8</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246470&hash=3906e8bb47adb55f', 'العتاولة - الحلقة 8')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246470&hash=3906e8bb47adb55f" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 9</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246450&hash=81c55e25f0429e38', 'العتاولة - الحلقة 9')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246450&hash=81c55e25f0429e38" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+           
+          <span class="episode-name">الحلقة 10</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246466&hash=bb9bbe645333e966', 'العتاولة - الحلقة 10')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246466&hash=bb9bbe645333e966" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 11</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246454&hash=f87fc2735b881beb', 'العتاولة - الحلقة 11')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246454&hash=f87fc2735b881beb" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 12</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246469&hash=20b7e971a9b95aaa', 'العتاولة - الحلقة 12')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246469&hash=20b7e971a9b95aaa" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+            
+          <span class="episode-name">الحلقة 13</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246462&hash=3dd0d666b4badb30', 'العتاولة - الحلقة 13')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246462&hash=3dd0d666b4badb30" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 14</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246453&hash=7c1d52b75bf74f05', 'العتاولة - الحلقة 14')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246453&hash=7c1d52b75bf74f05" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 15</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246455&hash=f62c541e53e5db3b', 'العتاولة - الحلقة 15')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246455&hash=f62c541e53e5db3b" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+           
+          <span class="episode-name">الحلقة 16</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246449&hash=152b13b76b5cc9cc', 'العتاولة - الحلقة 16')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246449&hash=152b13b76b5cc9cc" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 17</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246452&hash=9fd6c19b3c100211', 'العتاولة - الحلقة 17')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246452&hash=9fd6c19b3c100211" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 18</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246463&hash=58a97649bacf6ce5', 'العتاولة - الحلقة 18')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246463&hash=58a97649bacf6ce5" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+            <li>
+          <span class="episode-name">الحلقة 19</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246457&hash=52050ef4d56ff892', 'العتاولة - الحلقة 19')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246457&hash=52050ef4d56ff892" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 20</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246451&hash=93c43647af98a965', 'العتاولة - الحلقة 20')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246451&hash=93c43647af98a965" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 21</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246460&hash=df5f7563cc054dc3', 'العتاولة - الحلقة 21')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246460&hash=df5f7563cc054dc3" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+           
+          <span class="episode-name">الحلقة 22</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246448&hash=352d88f7cc1b95c5', 'العتاولة - الحلقة 22')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246448&hash=352d88f7cc1b95c5" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 23</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246459&hash=61997ebbba802bbb', 'العتاولة - الحلقة 23')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246459&hash=61997ebbba802bbb" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 24</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246447&hash=84f9783fa35bf186', 'العتاولة - الحلقة 24')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246447&hash=84f9783fa35bf186" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+            
+          <span class="episode-name">الحلقة 25</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246458&hash=5c188d9f3a1360b0', 'العتاولة - الحلقة 25')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246458&hash=5c188d9f3a1360b0" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 26</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246471&hash=1f20827b3bab7052', 'العتاولة - الحلقة 26')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246471&hash=1f20827b3bab7052" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 27</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246472&hash=3ebcae77e51e3864', 'العتاولة - الحلقة 27')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246472&hash=3ebcae77e51e3864" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+           
+          <span class="episode-name">الحلقة 28</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246473&hash=6465913ec52b2caa', 'العتاولة - الحلقة 28')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246473&hash=6465913ec52b2caa" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 29</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246474&hash=25be233c7df58807', 'العتاولة - الحلقة 29')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246474&hash=25be233c7df58807" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+          <span class="episode-name">الحلقة 30 والاخيرة</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://vkvideo.ru/video_ext.php?oid=784675179&id=456246475&hash=9e08a38fb9f25391', 'العتاولة - الحلقة 30 والاخيرة')">مشاهدة</a>
+            <a href="https://vkvideo.ru/video_ext.php?oid=784675179&id=456246475&hash=9e08a38fb9f25391" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+        </ul>
+        </div>
+
+
+
+
+
+
+
+
+</div>
+<div style="text-align: center; margin-top: 50px; padding: 20px;">
+  <a href="arabic-series.html">
+    <button style="
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007BFF'">
+      الصفحة السابقة>>
+    </button>
+  </a>
+</div>
+  
+
+  </div>
+  
+  <div class="footer">
+    © 2025 استراحة ناصر | جميع الحقوق محفوظة
+  </div>
+
+  <script>
+    function toggleEpisodes(id) {
+      const el = document.getElementById(id);
+      const title = el.previousElementSibling;
+      
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+        title.classList.remove('active');
+      } else {
+        el.style.display = 'block';
+        title.classList.add('active');
+      }
+    }
+    
+    function playVideo(url, title, type = 'iframe') {
+      const player = document.getElementById('video-player');
+      const titleElement = document.getElementById('player-title');
+      
+      // تحديث عنوان المشغل
+      titleElement.textContent = title;
+      
+      // إعداد مشغل الفيديو
+      player.innerHTML = '';
+      
+      if (type === 'video') {
+        // فيديو مباشر (MP4)
+        const videoElement = document.createElement('video');
+        videoElement.setAttribute('src', url);
+        videoElement.setAttribute('controls', true);
+        videoElement.style.width = '100%';
+        videoElement.style.height = '100%';
+        player.appendChild(videoElement);
+      } else {
+        // تضمين من مواقع خارجية
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', url);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allowfullscreen', true);
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        player.appendChild(iframe);
+      }
+      
+      // التمرير إلى مشغل الفيديو
+      document.querySelector('.video-player-container').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+    
+    function closeVideoPlayer() {
+      const player = document.getElementById('video-player');
+      player.innerHTML = '<div class="no-video-selected"><i>▶️</i><div>لم يتم اختيار أي فيديو للعرض</div></div>';
+      document.getElementById('player-title').textContent = 'اختر حلقة لمشاهدتها';
+    }
+  </script>
+
+</body>
+</html>
