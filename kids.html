@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>برامج أطفال</title>
-   <style>
+  <meta charset="UTF-8" />
+  <title>برامج اطفال</title>
+  <style>
     body {
       background: #F0FFFF;
       font-family: 'Cairo', sans-serif;
@@ -14,11 +14,15 @@
       color: #000000;
       margin-bottom: 30px;
     }
+    
     .navbar {
       background-color: #B0E0E6;
       overflow: auto;
       text-align: center;
       padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     .navbar a {
       color: black;
@@ -30,256 +34,490 @@
     .navbar a:hover {
       background-color: #1a1aff;
       border-radius: 8px;
+      color: white;
     }
-   
+
+    .video-player-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #B0E0E6;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+    
+    .video-player-title {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 15px;
+      text-align: center;
+      padding: 8px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+    
+    .video-player {
+      width: 100%;
+      height: 450px;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .video-player iframe, 
+    .video-player video {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .close-player-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ff4757;
+      color: white;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s;
+    }
+    
+    .close-player-btn:hover {
+      background: #ff6b81;
+      transform: scale(1.1);
+    }
+    
+    .no-video-selected {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: #aaa;
+      font-size: 20px;
+      background: #222;
+      flex-direction: column;
+    }
+    
+    .no-video-selected i {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
     .series-list {
       max-width: 700px;
       margin: 0 auto;
-      text-align: right;
+      text-align: center;
     }
+
+    .series-block {
+      margin-bottom: 30px;
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    
+    .series-block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .series-thumbnail {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    
+    .series-thumbnail:hover {
+      transform: scale(1.03);
+    }
+
     .series-title {
-      background-color: #DDEEFF;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
       padding: 15px 20px;
       border-radius: 15px;
       cursor: pointer;
       font-weight: bold;
       font-size: 20px;
-      color: #003366;
+      color: white;
+      margin-top: 10px;
       margin-bottom: 10px;
       user-select: none;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      transition: background-color 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: all 0.3s;
+      position: relative;
     }
+
     .series-title:hover {
-      background-color: #B0D0FF;
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
+    
+    .series-title::after {
+      content: "▼";
+      position: absolute;
+      right: 20px;
+      transition: transform 0.3s;
+    }
+    
+    .series-title.active::after {
+      transform: rotate(180deg);
+    }
+
     .episode-list {
       list-style: none;
       padding: 0 20px 20px 20px;
       margin: 0 0 20px 0;
-      display: none; 
+      display: none;
       background-color: #F0F8FF;
       border-radius: 0 0 15px 15px;
       box-shadow: inset 0 0 10px #CFE2FF;
+      max-height: 400px;
+      overflow-y: auto;
     }
+    
+    .episode-list::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .episode-list::-webkit-scrollbar-track {
+      background: #e1e8ff;
+      border-radius: 10px;
+    }
+    
+    .episode-list::-webkit-scrollbar-thumb {
+      background: #4facfe;
+      border-radius: 10px;
+    }
+    
+    .episode-list::-webkit-scrollbar-thumb:hover {
+      background: #00f2fe;
+    }
+
     .episode-list li {
-      padding: 8px 0;
+      padding: 12px 0;
       border-bottom: 1px solid #C0D8FF;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: background 0.2s;
     }
+    
+    .episode-list li:hover {
+      background: #e1edff;
+    }
+
     .episode-list li:last-child {
       border-bottom: none;
     }
+
     .episode-name {
       font-weight: bold;
       color: #003366;
+      font-size: 16px;
     }
+
     .btn {
-      background-color: #4682B4;
+      background: linear-gradient(to right, #3498db, #1a5ca3);
       color: white;
       border: none;
-      padding: 6px 14px;
+      padding: 8px 16px;
       margin-left: 10px;
       border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
       font-weight: bold;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
       text-decoration: none;
       display: inline-block;
+      min-width: 80px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
+
     .btn:hover {
-      background-color: #5a9bd5;
+      background: linear-gradient(to right, #1a5ca3, #3498db);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
+
     .btn-download {
-      background-color: #32CD32;
+      background: linear-gradient(to right, #2ecc71, #27ae60);
     }
+
     .btn-download:hover {
-      background-color: #45d845;
+      background: linear-gradient(to right, #27ae60, #2ecc71);
+    }
+    
+    .footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #B0E0E6;
+      border-radius: 15px;
+      color: #003366;
+      font-size: 14px;
+    }
+    
+    @media (max-width: 768px) {
+      .video-player {
+        height: 300px;
+      }
+      
+      .series-title {
+        font-size: 18px;
+        padding: 12px 15px;
+      }
+      
+      .episode-name {
+        font-size: 14px;
+      }
+      
+      .btn {
+        padding: 6px 12px;
+        font-size: 13px;
+        min-width: 70px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .video-player {
+        height: 250px;
+      }
+      
+      .series-title {
+        font-size: 16px;
+      }
+      
+      .episode-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      
+      .btn {
+        margin-left: 0;
+        margin-top: 5px;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+
   <div class="navbar">
     <a href="index.html">🏠 الرئيسية</a>
     <a href="arabic-series.html">📺 مسلسلات عربية</a>
     <a href="arabic-movies.html">🎬 أفلام عربية</a>
     <a href="kids.html">👶 الأطفال</a>
-    <a href="religion.html">🕌 الدينية</a>
+    <a href="religion.html"> وثائقيات📽</a>
     <a href="anime.html">🎌 الأنمي</a>
     <a href="episode_external_with_download.html">🛰 بث مباشر للقنوات الفضائية</a>
   </div>
-  <h1>برامج أطفال</h1>
-  <div class="series-list">
 
-    
+  <h1>📺 برامج اطفال</h1>
+  
+ 
+  <div class="video-player-container">
+    <div class="video-player-title" id="player-title">اختر حلقة لمشاهدتها</div>
+    <button class="close-player-btn" onclick="closeVideoPlayer()">✕</button>
+    <div class="video-player" id="video-player">
+      <div class="no-video-selected">
+        <i>▶️</i>
+        <div>لم يتم اختيار أي فيديو للعرض</div>
+      </div>
+    </div>
+  </div>
+
+ <div class="series-list">
+
+  
     <div class="series-block">
       <img src="Kk.png" alt="صورة فيديوهات تعليمية" class="series-thumbnail">
-      <div class="series-title" onclick="toggleEpisodes('hibah')">فيديوهات تعليمية ▼</div>
-      <ul id="hibah" class="episode-list">
+      <div class="series-title" onclick="toggleEpisodes('kk')">فيديوهات  تعليمية ▼</div>
+      <ul id="kk" class="episode-list">
         <li>
-          <span class="episode-name">تعلم الارقام باالعربية </span>
+          <span class="episode-name">تعلم الارقام  باالعربية</span>
           <div>
-            <a href="https://youtube.com/embed/fIMOkV63X5I?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/fIMOkV63X5I?feature=shared', ' - تعلم الارقام باالعربية')">مشاهدة</a>
+            <a href="https://youtube.com/embed/fIMOkV63X5I?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم الحروف العربية </span>
+          <span class="episode-name">تعلم الحروف العربية</span>
           <div>
-            <a href="https://youtube.com/embed/kSlmmLvMqWA?feature=shared" target" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/kSlmmLvMqWA?feature=shared', ' - تعلم  الحروف العربية')">مشاهدة</a>
+            <a href="https://youtube.com/embed/kSlmmLvMqWA?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم الارقام باالعربية </span>
+          <span class="episode-name"> تعلم الارقام الكبرى باالعربية</span>
           <div>
-            <a href="https://youtube.com/embed/-o5O_VLYvwU?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/-o5O_VLYvwU?feature=shared', 'تعلم  الارقام  الكبرى العربية -  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/-o5O_VLYvwU?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم الالوان باالعربية </span>
+          <span class="episode-name">تعلم  الالوان باالعربية</span>
           <div>
-            <a href="https://youtube.com/embed/9Pv4MgycFi4?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/9Pv4MgycFi4?feature=shared', 'تعلم  الالوان باالعربية-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/9Pv4MgycFi4?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم أركان الإسلام </span>
+          <span class="episode-name"> تعلم أركان الإسلام</span>
           <div>
-            <a href="https://youtube.com/embed/vC43yxyjIEE?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/vC43yxyjIEE?feature=shared', 'تعلم  أركان الإسلام-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/vC43yxyjIEE?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم الوضوء  </span>
+          <span class="episode-name"> تعلم الوضوء</span>
           <div>
-            <a href="https://youtube.com/embed/y3Hd5srW_ak?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/y3Hd5srW_ak?feature=shared', 'تعلم  الوضوء-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/y3Hd5srW_ak?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم الصلاة  </span>
+          <span class="episode-name">تعلم الصلاة</span>
           <div>
-            <a href="https://youtube.com/embed/edL3W38ODd4?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/edL3W38ODd4?feature=shared', 'تعلم  الصلاة-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/edL3W38ODd4?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم آداب الطعام  </span>
+          <span class="episode-name"> تعلم آداب الطعام</span>
           <div>
-            <a href="https://youtube.com/embed/TXH-qwmsWm0?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/TXH-qwmsWm0?feature=shared', 'تعلم  آداب الطعام-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/TXH-qwmsWm0?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم  الحروف الانجليزية للأطفال</span>
+          <span class="episode-name"> تعلم الحروف الانجليزية</span>
           <div>
-            <a href="https://youtube.com/embed/5PKXLilDGuE?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/5PKXLilDGuE?feature=shared', 'تعلم  الحروف الانجليزية- ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/5PKXLilDGuE?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم  الارقام الانجليزية للأطفال</span>
+          <span class="episode-name">تعلم  الارقام الانجليزية</span>
           <div>
-            <a href="https://youtube.com/embed/6QJ0NWz512g?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/6QJ0NWz512g?feature=shared', 'تعلم  الارقام الانجليزية-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/6QJ0NWz512g?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تعلم  الالوان الانجليزية للأطفال</span>
+            <span class="episode-name">تعلم  الالوان الانجليزية</span>
           <div>
-            <a href="https://youtube.com/embed/1b8EmT12X_g?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/1b8EmT12X_g?feature=shared', 'تعلم  الالوان الانجليزية-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/1b8EmT12X_g?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
-      </ul>
-    </div>
+        <li>
+        </ul>
+</div>
 
-   
+ <div class="series-list">
+
+  
     <div class="series-block">
-      <img src="Kkk.png" alt="صورة فيديوهات ترفيهية " class="series-thumbnail">
-      <div class="series-title" onclick="toggleEpisodes('ghrabeeb')">فيديوهات ترفيهية ▼</div>
-      <ul id="ghrabeeb" class="episode-list">
+      <img src="Kkk.png" alt="صورة فيديوهات ترفيهية" class="series-thumbnail">
+      <div class="series-title" onclick="toggleEpisodes('kkk')">فيديوهات  ترفيهية ▼</div>
+      <ul id="kkk" class="episode-list">
         <li>
           <span class="episode-name">قصص في عالم الأبطال الخارقين</span>
           <div>
-            <a href="https://youtube.com/embed/ZYLRR89Y3pM?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/ZYLRR89Y3pM?feature=shared', ' - قصص في عالم الأبطال الخارقين')">مشاهدة</a>
+            <a href="https://youtube.com/embed/ZYLRR89Y3pM?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">في المزرعة -اصوات الحيوانات</span>
+          <span class="episode-name">في المزرعة اصوات الحيوانات</span>
           <div>
-            <a href="https://youtube.com/embed/iW1gtfI4Ufk?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/iW1gtfI4Ufk?feature=shared', ' - في المزرعة اصوات الحيوانات')">مشاهدة</a>
+            <a href="https://youtube.com/embed/iW1gtfI4Ufk?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">تيلتابيز</span>
+          <span class="episode-name"> تليتابيز</span>
           <div>
-            <a href="https://youtube.com/embed/-umDQwj8rlE?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/-umDQwj8rlE?feature=shared', 'تليتابيز -  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/-umDQwj8rlE?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
           <span class="episode-name">قصة النبي موسى علية السلام</span>
           <div>
-            <a href="https://youtube.com/embed/kiupVafniFQ?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/kiupVafniFQ?feature=shared', 'قصة النبي موسى علية السلام-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/kiupVafniFQ?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">قصة النبي يونس علية السلام</span>
+          <span class="episode-name"> قصة النبي يونس علية السلام</span>
           <div>
-            <a href="https://youtube.com/embed/-fvcKFKt1qQ?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/-fvcKFKt1qQ?feature=shared', 'قصة النبي يونس علية السلام-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/-fvcKFKt1qQ?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">قصة سيدنا آدم علية السلام</span>
+          <span class="episode-name"> قصة سيدنا آدم علية السلام</span>
           <div>
-            <a href="https://youtube.com/embed/hC-hfDGgMVg?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/hC-hfDGgMVg?feature=shared', 'قصة سيدنا آدم علية السلام-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/hC-hfDGgMVg?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
           <span class="episode-name">قصة النبي نوح علية السلام</span>
           <div>
-            <a href="https://youtube.com/embed/zAXRZpDyr8Q?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/zAXRZpDyr8Q?feature=shared', 'قصة النبي نوح علية السلام-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/zAXRZpDyr8Q?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">قصة النبي إبراهيم علية السلام</span>
+          <span class="episode-name"> قصة النبي إبراهيم علية السلام</span>
           <div>
-            <a href="https://youtube.com/embed/J-3H_lP8qHQ?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/J-3H_lP8qHQ?feature=shared', 'قصة النبي إبراهيم علية السلام-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/J-3H_lP8qHQ?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
-          <span class="episode-name">قصة النبي يوسف علية السلام</span>
+          <span class="episode-name"> قصة النبي يوسف علية السلام</span>
           <div>
-            <a href="https://youtube.com/embed/yrKJuWGEiVU?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/yrKJuWGEiVU?feature=shared', 'قصة النبي يوسف علية السلام- ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/yrKJuWGEiVU?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
         <li>
           <span class="episode-name">قصة النبي سليمان علية السلام</span>
           <div>
-            <a href="https://youtube.com/embed/60RbMZEbFGU?feature=shared" target="_blank" class="btn">مشاهدة</a>
-            <a href="#" class="btn btn-download" download>تحميل</a>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/60RbMZEbFGU?feature=shared', 'قصة النبي سليمان علية السلام-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/60RbMZEbFGU?feature=shared" class="btn btn-download" download>تحميل</a>
           </div>
         </li>
-      </ul>
-    </div>
+        <li>
+            <span class="episode-name">قصة النبي شعيب علية السلام</span>
+          <div>
+            <a href="#" class="btn" onclick="playVideo('https://youtube.com/embed/QQ2yY4KCw6k?feature=shared', 'قصة النبي شعيب علية السلام-  ')">مشاهدة</a>
+            <a href="https://youtube.com/embed/QQ2yY4KCw6k?feature=shared" class="btn btn-download" download>تحميل</a>
+          </div>
+        </li>
+        <li>
+        </ul>
+        </div>
+         </div>
 
     
     <div class="series-block">
-      <img src="K.png" alt="صورة العاب وتسلية " class="series-thumbnail">
+      <img src="k.png" alt="صورة العاب وتسلية " class="series-thumbnail">
       <div class="series-title" onclick="toggleEpisodes('ekhteyar')">العاب وتسلية ▼</div>
       <ul id="ekhteyar" class="episode-list">
         <li>
@@ -355,13 +593,80 @@
       </ul>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  
+  <div class="footer">
+    © 2025 استراحة ناصر | جميع الحقوق محفوظة
   </div>
 
   <script>
     function toggleEpisodes(id) {
       const el = document.getElementById(id);
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+      const title = el.previousElementSibling;
+      
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+        title.classList.remove('active');
+      } else {
+        el.style.display = 'block';
+        title.classList.add('active');
+      }
+    }
+    
+    function playVideo(url, title, type = 'iframe') {
+      const player = document.getElementById('video-player');
+      const titleElement = document.getElementById('player-title');
+      
+      // تحديث عنوان المشغل
+      titleElement.textContent = title;
+      
+      // إعداد مشغل الفيديو
+      player.innerHTML = '';
+      
+      if (type === 'video') {
+        // فيديو مباشر (MP4)
+        const videoElement = document.createElement('video');
+        videoElement.setAttribute('src', url);
+        videoElement.setAttribute('controls', true);
+        videoElement.style.width = '100%';
+        videoElement.style.height = '100%';
+        player.appendChild(videoElement);
+      } else {
+        // تضمين من مواقع خارجية
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', url);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allowfullscreen', true);
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        player.appendChild(iframe);
+      }
+      
+      // التمرير إلى مشغل الفيديو
+      document.querySelector('.video-player-container').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+    
+    function closeVideoPlayer() {
+      const player = document.getElementById('video-player');
+      player.innerHTML = '<div class="no-video-selected"><i>▶️</i><div>لم يتم اختيار أي فيديو للعرض</div></div>';
+      document.getElementById('player-title').textContent = 'اختر حلقة لمشاهدتها';
     }
   </script>
+
 </body>
 </html>
