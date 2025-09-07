@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بث مباشر - للمبارايات في القنوات الرياضية المشفرة</title>
+  <style>
+    body {
+      font-family: "Tahoma", sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    #player {
+      width: 80%;
+      max-width: 900px;
+      margin: 20px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      background: black;
+    }
+
+    #player video, 
+    #player iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>🎥 بث مباشر - للمبارايات في القنوات الرياضية المشفرة</header>
+
+  <!-- المشغل الرئيسي -->
+  <div id="player">
+    <video id="mainVideo" controls autoplay muted>
+      <source src="https://m.youtube.com/watch?v=pXDxVtwC4-k&pp=0gcJCRsBo7VqN5tD" type="video/mp4">
+      متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+  </div>
+
+  <!-- قائمة الفيديوهات -->
+  <div class="videos">
+    <div class="card" onclick="playVideo('https://pp.yalla1shoot.online/albaplayer/sports-1/')">
+      <img src="bein1.png" alt="bein sport 1">
+      <h3> bein sport(1)</h3>
+    </div>
+
+    <div class="card" onclick="playVideo('https://pp.yalla1shoot.online/albaplayer/sports-2/?serv=4')">
+      <img src="bein2.png" alt="bein 2">
+      <h3>bein sport(2)</h3>
+    </div>
+
+    <div class="card" onclick="playVideo('https://pp.yalla1shoot.online/albaplayer/sports-3/')">
+      <img src="bein3.png" alt="bein 3">
+      <h3> bein sport(3)</h3>
+    </div>
+     <div class="card" onclick="playVideo('https://direct.aflam4you.net/embed.php?vid=108')">
+      <img src="kaas1.png" alt="kaas 1">
+      <h3>الكأس(1)</h3>
+      </div>
+
+    <div class="card" onclick="playVideo('https://direct.aflam4you.net/embed.php?vid=109')">
+      <img src="kaas2.png" alt="kaas 2">
+      <h3> الكأس(2)</h3>
+    </div>
+     <div class="card" onclick="playVideo('https://direct.aflam4you.net/embed.php?vid=112')">
+      <img src="adsp1.png" alt="adsp 1">
+      <h3>ابوظبي الرياضية(1)</h3>
+      </div>
+
+    <div class="card" onclick="playVideo('https://direct.aflam4you.net/embed.php?vid=114')">
+      <img src="adsp2.png" alt="adsp 2">
+      <h3> ابوظبي الرياضية(2)</h3>
+    </div>
+     <div class="card" onclick="playVideo('https://direct.aflam4you.net/embed.php?vid=103')">
+      <img src="ssc1.png" alt="ssc 1">
+      <h3> السعودية الرياضية(1)</h3>
+      </div>
+
+    <div class="card" onclick="playVideo('https://direct.aflam4you.net/embed.php?vid=104')">
+      <img src="ssc2.png" alt="ssc 2">
+      <h3> السعودية الرياضية(2)</h3>
+    </div>
+     <div class="card" onclick="playVideo('https://direct.aflam4you.net/embed.php?vid=105')">
+      <img src="ssc3.png" alt="ssc 3">
+      <h3> السعودية الرياضية(3)</h3>
+      </div>
+
+    <div class="card" onclick="playVideo('https://direct.aflam4you.net/embed.php?vid=106')">
+      <img src="ssc4.png" alt="ssc 4">
+      <h3> السعودية الرياضية(4)</h3>
+    </div>
+     <div class="card" onclick="playVideo('https://direct.aflam4you.net/embed.php?vid=107')">
+      <img src="data:image/png;base64,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" alt="الرياضية 3">
+      <h3> الرياضية</h3>
+  </div>
+  
+  </div>
+  
+  <div class="footer">
+    © 2025 استراحة ناصر | جميع الحقوق محفوظة
+  </div>
+
+  <script>
+  <script>
+    // ✅ منع النوافذ المنبثقة
+    window.open = function() {
+      console.warn("🚫 تم حظر نافذة منبثقة");
+      return null;
+    };
+
+    // ✅ منع مغادرة الصفحة
+    window.onbeforeunload = function() {
+      return "❌ لا يمكنك مغادرة هذه الصفحة أثناء المشاهدة.";
+    };
+
+    // ✅ منع أي إعادة توجيه
+    setInterval(() => {
+      if (window.top !== window.self) {
+        window.top.location = window.self.location;
+      }
+    }, 1000);
+
+    // ✅ تشغيل الفيديو
+    function playVideo(src) {
+      let player = document.getElementById("player");
+
+      if (src.endsWith(".mp4") || src.endsWith(".m3u8")) {
+        player.innerHTML = `
+          <video controls autoplay muted>
+            <source src="${src}" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+          </video>
+        `;
+      }
+      else if (src.includes("youtube.com") || src.includes("youtu.be")) {
+        let videoId = "";
+        if (src.includes("watch?v=")) {
+          videoId = src.split("watch?v=")[1];
+        } else if (src.includes("youtu.be/")) {
+          videoId = src.split("youtu.be/")[1];
+        }
+        player.innerHTML = `
+          <iframe 
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&modestbranding=1&rel=0&iv_load_policy=3&controls=1"
+            allow="autoplay; encrypted-media; fullscreen"
+            allowfullscreen
+            sandbox="allow-same-origin allow-scripts allow-forms allow-presentation">
+          </iframe>
+        `;
+      }
+      else if (src.includes("vimeo.com")) {
+        let videoId = src.split("vimeo.com/")[1];
+        player.innerHTML = `
+          <iframe 
+            src="https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1&dnt=1"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            sandbox="allow-same-origin allow-scripts allow-forms allow-presentation">
+          </iframe>
+        `;
+      }
+      else {
+        player.innerHTML = `
+          <iframe 
+            src="${src}" 
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            sandbox="allow-same-origin allow-scripts allow-forms allow-presentation">
+          </iframe>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
