@@ -601,6 +601,39 @@
         left: -20px;
       }
     }
+    #top-banner {
+    width: 100%;
+    background: linear-gradient(90deg, #000080, #ff9800);
+    color: #fff;
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    position: sticky; /* يظل في الأعلى عند التمرير */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+
+  #top-banner span {
+    margin-right: 10px;
+  }
+
+  #banner-btn {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 6px 15px;
+    background: #fff;
+    color: #d84315;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  #banner-btn:hover {
+    background: #fbe9e7;
+  }
   </style>
 </head>
 <body>
@@ -610,6 +643,10 @@
         <h1>أهلا وسهلا بكم في استراحة شبكتي لمشاهدة احدث المسلسلات والأفلام الاجنبية والعربية والتركية والهندية والبرامج الدينية وبرامج الأطفال والألعاب المجانية بدون تنزيلها على الهواتف</h1>
       </marquee>
     </div>
+    <div id="top-banner">
+ <span>⚽️ الان يمكنكم الاستمتاع بمشاهدة <strong>البث المباشر للمباريات والقنوات الرياضية</strong></span>
+  <a href="bein.html" id="banner-btn">اضغط هنا</a>
+</div>
   </div>
 
   <div class="navbar">
